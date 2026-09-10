@@ -1,0 +1,6 @@
+*~
+*.tmp
+*.bak
+.DS_Store
+ovpn-passwd/ovpn-passwd
+/tmp/
