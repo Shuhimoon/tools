@@ -1,0 +1,26 @@
+# Never commit secrets, keys, binaries, or local junk
+.*
+!.gitignore
+bin/
+**/bin/
+*.pem
+*.key
+*_key
+*_key.pub
+id_rsa*
+id_ed25519*
+oci_api_key*
+.oci/
+config
+config.yaml
+config.yml
+*.env
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+venv/
+oci-venv/
+last-cycle*.txt
+launch-*.json
+*.log
