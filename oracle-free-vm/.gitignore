@@ -1,26 +1,30 @@
-# Never commit secrets, keys, binaries, or local junk
-.*
-!.gitignore
-bin/
-**/bin/
+# Secrets & local config — never commit
+.env
 *.pem
 *.key
-*_key
-*_key.pub
-id_rsa*
-id_ed25519*
-oci_api_key*
 .oci/
-config
-config.yaml
-config.yml
-*.env
-!.env.example
-__pycache__/
-*.pyc
-.venv/
-venv/
-oci-venv/
-last-cycle*.txt
-launch-*.json
+oci_api_key.pem
+oci_api_key_public.pem
+
+# Generated / runtime
+fleet-plan.txt
+bin/
+*.exe
+oracle-free-setup
+oracle-free-camp
+
+# Local junk
 *.log
+*.tmp
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+*.bak
+
+# Allow examples
+!.env.example
+!fleet-plan.example.txt
+!.gitignore
