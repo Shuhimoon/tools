@@ -21,7 +21,7 @@ go build -o oracle-free-camp ./cmd/camp
 
 兩個二進位建議放在同一目錄；`setup` 預設會找旁邊的 `oracle-free-camp`。
 
-## 第一部分：設定精靈（setup）
+## 第一部分：設定相關資料（setup）
 
 ```bash
 ./oracle-free-setup
@@ -40,7 +40,7 @@ go build -o oracle-free-camp ./cmd/camp
 
 選用選單：**終止線上實例**（兩次確認後才呼叫 `oci compute instance terminate`）。
 
-## 第二部分：露營一輪（camp）
+## 第二部分：執行排程（camp）
 
 ```bash
 cp .env.example .env   # 填入 compartment / subnet 等
