@@ -57,7 +57,7 @@ cp .env.example .env   # 填入 compartment / subnet 等
 | `OCI_REGION` | | 預設 `ap-singapore-1` |
 | `OCI_CLI_PROFILE` | | 預設 `DEFAULT` |
 | `OCI_AVAILABILITY_DOMAIN` | | 空白則自動取第一個 |
-| `SSH_PUBLIC_KEY_FILE` | | 預設 `~/.ssh/oci_always_free.pub` |
+| `SSH_PUBLIC_KEY_FILE` | ✓ | 機器 SSH public key 檔路徑（無預設，須自行填） |
 | `OCI_IMAGE_AMD` / `OCI_IMAGE_ARM` | | 空白則自動挑 Ubuntu 24.04 Minimal |
 | `ORACLE_FREE_VM_DIR` | | `.env` 與 `fleet-plan.txt` 所在目錄（預設 cwd） |
 

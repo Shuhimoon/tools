@@ -34,7 +34,7 @@ func LoadConfig() (*Config, error) {
 		CompartmentID:      strings.TrimSpace(os.Getenv("OCI_COMPARTMENT_ID")),
 		SubnetID:           strings.TrimSpace(os.Getenv("OCI_SUBNET_ID")),
 		AvailabilityDomain: strings.TrimSpace(os.Getenv("OCI_AVAILABILITY_DOMAIN")),
-		SSHPublicKeyFile:   env.ExpandHome(env.GetenvDefault("SSH_PUBLIC_KEY_FILE", "~/.ssh/oci_always_free.pub")),
+		SSHPublicKeyFile:   env.ExpandHome(strings.TrimSpace(os.Getenv("SSH_PUBLIC_KEY_FILE"))),
 		ImageAMD:           strings.TrimSpace(os.Getenv("OCI_IMAGE_AMD")),
 		ImageARM:           strings.TrimSpace(os.Getenv("OCI_IMAGE_ARM")),
 	}
@@ -44,6 +44,9 @@ func LoadConfig() (*Config, error) {
 	}
 	if c.SubnetID == "" {
 		missing = append(missing, "OCI_SUBNET_ID")
+	}
+	if c.SSHPublicKeyFile == "" {
+		missing = append(missing, "SSH_PUBLIC_KEY_FILE")
 	}
 	if len(missing) > 0 {
 		return nil, fmt.Errorf("缺少環境變數: %s（請複製 .env.example 為 .env）", strings.Join(missing, ", "))
